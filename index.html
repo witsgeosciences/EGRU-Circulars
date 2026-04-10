@@ -83,7 +83,9 @@ async function load() {
       folders[year].push(file);
     });
 
-    Object.keys(folders).sort((a,b)=>b-a).forEach(year => {
+    Object.keys(folders)
+      .sort((a, b) => Number(b) - Number(a))
+      .forEach(year => {
 
       const yearDiv = document.createElement("div");
       yearDiv.className = "year";
