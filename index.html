@@ -107,7 +107,11 @@ async function load() {
         const div = document.createElement("div");
         div.className = "issue";
 
-         div.textContent = file;
+        const link = document.createElement("a");
+        link.href = `https://raw.githubusercontent.com/witsgeosciences/EGRU-Circulars/main/${year}/${file}`;
+        link.target = "_blank";
+        link.textContent = file;
+        div.appendChild(link);
 
         issuesDiv.appendChild(div);
       });
